@@ -1,0 +1,12 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Local emulator" verbose="1">
+    <listeners>
+        <listener class-name="com.saucedemo.mobile.listener.MobileTestListener"/>
+        <listener class-name="com.saucedemo.mobile.listener.RetryTransformer"/>
+    </listeners>
+    <test name="sample-device-tests">
+        <packages>
+            <package name="com.saucedemo.mobile.tests"/>
+        </packages>
+    </test>
+</suite>

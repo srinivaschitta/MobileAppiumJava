@@ -1,0 +1,13 @@
+target/
+.idea/
+*.iml
+.classpath
+.project
+.settings/
+.vscode/
+*.log
+logs/
+apps/
+.env
+.DS_Store
+extent-reports/

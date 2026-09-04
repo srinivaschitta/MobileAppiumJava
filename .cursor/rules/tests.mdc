@@ -1,0 +1,14 @@
+---
+description: TestNG test naming and thin-test conventions
+globs: src/test/java/**/*.java
+alwaysApply: false
+---
+
+# Mobile tests
+
+- Name methods `validate<Behavior>()` — e.g. `validateLoginSucceedsWithValidCredentials`.
+- `@Test(description = "...")` is one Given/When/Then line. Groups: `smoke`, `login`, `cart`, `checkout`.
+- Tests stay thin and follow arrange / act / assert as three separate steps. Do not nest journey + assert in one line.
+- Arrange: fixtures (`DemoUser`, `DemoProduct`). Act: one `*Journey` call. Assert: one `*Assert` method. No locators, waits, or AssertJ in the test class.
+- Users and products come from `DemoUser` / `DemoProduct` / `DemoCheckoutForm`. Do not add a second testdata folder.
+- Put new cases in the existing `*Tests` class. Tests extend `BaseTest`.

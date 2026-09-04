@@ -1,0 +1,15 @@
+---
+description: Screen object locator, wait, and naming conventions
+globs: src/main/java/**/screens/**/*.java
+alwaysApply: false
+---
+
+# Screen objects
+
+- Class suffix `Screen` (not `Page`). Actions are verbs: `enterUsername`, `tapLogin`, `loginAs`. Queries: `isErrorVisible()`.
+- Locators: `private static final By LOGIN_BUTTON = AppiumBy.accessibilityId("Login button");`
+- Priority: accessibility id → resource-id → UiAutomator → XPath last.
+- All taps/types go through `BaseScreen` waits. Implicit wait stays 0. No `Thread.sleep` except the documented RN header long-press reset.
+- Public navigation methods return the next screen when the destination is certain (`loginAs` → `CatalogScreen`).
+- Log at the action boundary (`log.info("Tapping login")`), not per wait poll.
+- Call `ReportManager.logStep(...)` on public actions. Do not assert business outcomes here.

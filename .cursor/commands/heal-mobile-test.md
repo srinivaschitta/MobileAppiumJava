@@ -1,0 +1,1 @@
+Follow the project skill `.cursor/skills/heal-mobile-test/SKILL.md`. Diagnose the Surefire failure from reports and `target/diagnostics`, then propose a locator or wait change for review. Do not auto-commit.

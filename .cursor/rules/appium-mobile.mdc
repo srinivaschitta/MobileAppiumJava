@@ -1,0 +1,14 @@
+---
+description: Conventions for the Appium Java mobile suite
+alwaysApply: true
+---
+
+# Appium mobile suite conventions
+
+- Framework code lives in `src/main/java`. Tests live in `src/test/java`. Env files, TestNG XML, and Log4j2 live in `src/test/resources`. Demo users and products are Java classes under `data/`.
+- Screens do **not** extend `BaseTest`. Tests own TestNG lifecycle. Screens take the driver via `DriverManager` / constructor.
+- Locators stay on screens as `private static final By`. No `PageFactory`, no Appium locators in tests.
+- Runtime tests never call MCP. Appium MCP and filesystem MCP are authoring-time only (locator discovery, report dumps).
+- Missing config → `ConfigException`. Secrets come from env / CI, never committed properties.
+- Assisted heal only: propose locator/wait changes after review. Never silently rewrite tests on failure. Never auto-commit.
+- No `Utils` / `GenericFunctions` classes. No Rest Assured, Excel/POI, or dual JSON libraries.
