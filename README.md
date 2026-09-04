@@ -161,6 +161,11 @@ mvn test -Denv=sauce -DsuiteXmlFile=src/test/resources/testng-sauce.xml
 
 CI compiles on every PR (`mvn test-compile`). It does not need a device. The Sauce job is optional: trigger it by hand or on `main` when secrets are set.
 
+
+## AI assistance
+
+AI (Cursor) was used on this repo.
+
 ## Cursor rules and skills
 
 `.cursor/rules` and `.cursor/skills` tell a Cursor agent how to add tests in this repo (thin tests, screen objects, no silent locator rewrite). They are editor help only. Maven does not read them.
@@ -210,16 +215,6 @@ The suite does not auto-heal locators at runtime.
 ### Filesystem MCP
 
 `.cursor/mcp.json` adds a second plugin that can only read files inside this repo (Extent HTML, diagnostics, Surefire). It cannot drive the phone. Use it when asking Cursor to explain a failed run.
-
-## AI assistance
-
-AI (Cursor) was used on this repo. Reviewers should treat that as part of how the suite was built.
-
-**Where AI played a significant role**
-
-- Project layout, Maven/`pom.xml`, provider classes, listener, retry, and CI YAML were drafted with the agent.
-- Screen objects, journeys, assert classes, and the five sample tests were written with the agent, then edited to keep tests on arrange / act / assert.
-- This README, including the design choices, was written and rewritten with the agent.
 
 **Where MCP played a role**
 
