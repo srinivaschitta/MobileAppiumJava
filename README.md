@@ -21,17 +21,14 @@ Choices that matter:
 - Failures are handled in a TestNG listener, not in `tearDown`.
 
 ## App
-
-Target: [my-demo-app-rn](https://github.com/saucelabs/my-demo-app-rn) v1.3.0 APK.
-
-That repo is archived. Sauce now publishes a native app at [my-demo-app-android](https://github.com/saucelabs/my-demo-app-android). This suite stays on the RN APK so locators stay consistent. Do not mix the two.
+Release : https://github.com/saucelabs/my-demo-app-rn/releases#release-v1.3.0
 
 - Package: `com.saucelabs.mydemoapp.rn`
 - Activity: `com.saucelabs.mydemoapp.rn.MainActivity`
 
 This build keeps login and cart data after the app is killed. After each session starts, the suite long-presses the header (`longpress reset app`, 1 second) to clear that state.
 
-Place the APK at `apps/Android-MyDemoAppRN.apk`. It is gitignored. See [apps/README.md](apps/README.md).
+Place the APK at `apps/`. It is gitignored. See [apps/README.md](apps/README.md).
 
 ## Folders
 
